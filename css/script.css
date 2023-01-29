@@ -1,13 +1,20 @@
+.container{
+	padding-left: 100px;
+	padding-bottom: 10%;
+	background-color: whitesmoke;
+  cursor: pointer;
+}
+
 .grid{
-	width:90%;
+	width:80%;
 	height:300px;
-	display:flex;
+	display:table-cell;
 	flex-wrap:wrap;
-	margin:60px auto;
+	margin:100px auto;
 }
 
 .grid img{
-	margin:2px;
+	margin:4px;
 	transform-style: preserve-3d;
 	transition: transform 0.5s;
 }
@@ -28,6 +35,12 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+}
+
+.score{
+	color:gold;
+	font-style: italic;
+	font-size: larger;
 }
 
 .data{

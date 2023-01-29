@@ -3,7 +3,26 @@ let imagesArray = [
 	{ name: "charles", img: "img/charles.jpg", },
 	{ name: "kat-smith", img: "img/kat-smith.jpg", },
 	{ name: "kat-smith", img: "img/kat-smith.jpg", },
-
+	{ name: "alexandru", img: "img/alexandru.jpg", },
+	{ name: "alexandru", img: "img/alexandru.jpg", },
+	{ name: "chevanon", img: "img/chevanon.jpg", },
+	{ name: "chevanon", img: "img/chevanon.jpg", },
+	{ name: "ilargian", img: "img/ilargian.jpg", },
+	{ name: "ilargian", img: "img/ilargian.jpg", },
+	{ name: "muhannad", img: "img/muhannad.jpg", },
+	{ name: "muhannad", img: "img/muhannad.jpg", },
+	{ name: "nishizuka", img: "img/nishizuka.jpg", },
+	{ name: "nishizuka", img: "img/nishizuka.jpg", },
+	{ name: "steshka", img: "img/steshka.jpg", },
+	{ name: "steshka", img: "img/steshka.jpg", },
+	{ name: "simona", img: "img/simona.jpg", },
+	{ name: "simona", img: "img/simona.jpg", },
+	{ name: "pixabay", img: "img/pixabay.jpg", },
+	{ name: "pixabay", img: "img/pixabay.jpg", },
+	{ name: "pixabay-2", img: "img/pixabay-2.jpg", },
+	{ name: "pixabay-2", img: "img/pixabay-2.jpg", },
+	{ name: "pixabay-160", img: "img/pixabay-160.jpg", },
+	{ name: "pixabay-160", img: "img/pixabay-160.jpg", },
 ]
 
 //Defining Variables
