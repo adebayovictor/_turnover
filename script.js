@@ -1,26 +1,114 @@
+//Users Prompt
+let rowAndColumn;
+let imageNumber;
+let row;
+let column
+let inputValue;
+let numCheck;
+let numtype;
+let result;
+
+const getClosestFactors = (inputValue) => {
+	// find the square root of the input value
+	const root = Math.sqrt(inputValue);
+	console.log(root);
+
+
+	// if the root is an integer i.e perfect root				
+	if (Number.isInteger(root)) {
+		console.log("Perfect root: " + root);
+		// return a tuple of the root [x, x]
+		return [root, root];
+	}
+
+	// else 
+	// strip/truncate the root, removing decimals, use as divisor
+	let divisor = Math.trunc(root);
+	console.log({divisor});
+
+	// while divisor is not equal to zero
+	// or the remainder of division of the inputValue and current divisor is not equal to zero 
+	while (divisor > 0 && ((inputValue % divisor) !== 0)) {
+		// decrement divisor
+		console.log({inputValue, divisor})
+		console.log(inputValue % divisor);
+		divisor--
+	}
+
+	if (!divisor) {
+		alert("Error getting close factors. Divisor invalid: " + divisor);
+		throw new Error("Divisor error");
+	}
+
+
+	// return the tuple conatining [divisor, inputValue/divisor]
+	return [divisor, inputValue / divisor]
+}
+
+window.onload = function () {
+	totalSquares = prompt("Please speciy the total number of squares (must be a mutliple of 2,max of 100");
+	// if rows and columns are not specified use default
+	if (!totalSquares) {
+		row = 4;
+		column = 4;
+	}
+	// if specified ensure that the number is valid
+	else {
+		// ensure the value is a valid number
+		if (!(/[0-9]+/.test(totalSquares))) {
+			alert("Invalid number: " + totalSquares);
+			return;
+		}
+
+		// ensure the number is a multiple of 2
+		if (totalSquares % 2 !== 0) {
+			alert("Not a multiple of 2: " + totalSquares);
+			return;
+		}
+		
+		//Ensure the number provided is not more than 100
+
+		 if (totalSquares > 100) {
+			  alert("it is more than 100: " + totalSquares);
+					return;
+		 }
+
+		// get the 2 closest factors
+		const factors = getClosestFactors(totalSquares);
+		console.log({ factors })
+		alert("Factors: " + JSON.stringify(factors));
+
+		// assign to row and column
+
+	}
+
+};
+
+
+
 let imagesArray = [
-	{ name: "charles", img: "img/charles.jpg", },
-	{ name: "charles", img: "img/charles.jpg", },
-	{ name: "kat-smith", img: "img/kat-smith.jpg", },
-	{ name: "kat-smith", img: "img/kat-smith.jpg", },
-	{ name: "alexandru", img: "img/alexandru.jpg", },
-	{ name: "alexandru", img: "img/alexandru.jpg", },
-	{ name: "chevanon", img: "img/chevanon.jpg", },
-	{ name: "chevanon", img: "img/chevanon.jpg", },
-	{ name: "ilargian", img: "img/ilargian.jpg", },
-	{ name: "ilargian", img: "img/ilargian.jpg", },
-	{ name: "muhannad", img: "img/muhannad.jpg", },
-	{ name: "muhannad", img: "img/muhannad.jpg", },
-	{ name: "nishizuka", img: "img/nishizuka.jpg", },
-	{ name: "nishizuka", img: "img/nishizuka.jpg", },
-	{ name: "steshka", img: "img/steshka.jpg", },
-	{ name: "steshka", img: "img/steshka.jpg", },
-	{ name: "simona", img: "img/simona.jpg", },
-	{ name: "simona", img: "img/simona.jpg", },
-	{ name: "pixabay", img: "img/pixabay.jpg", },
-	{ name: "pixabay", img: "img/pixabay.jpg", },
-	{ name: "pixabay-2", img: "img/pixabay-2.jpg", },
-	{ name: "pixabay-2", img: "img/pixabay-2.jpg", },
+	{ name: "charles",  	 img: "img/charles.jpg", },
+	{ name: "charles",  	 img: "img/charles.jpg", },
+	{ name: "kat-smith",	 img: "img/kat-smith.jpg", },
+	{ name: "kat-smith",	 img: "img/kat-smith.jpg", },
+	{ name: "alexandru", 	 img: "img/alexandru.jpg", },
+	{ name: "alexandru",	 img: "img/alexandru.jpg", },
+	{ name: "chevanon", 	 img: "img/chevanon.jpg", },
+	{ name: "chevanon", 	 img: "img/chevanon.jpg", },
+	{ name: "ilargian", 	 img: "img/ilargian.jpg", },
+	{ name: "ilargian", 	 img: "img/ilargian.jpg", },
+	{ name: "muhannad", 	 img: "img/muhannad.jpg", },
+	{ name: "muhannad", 	 img: "img/muhannad.jpg", },
+	{ name: "nishizuka", 	 img: "img/nishizuka.jpg", },
+	{ name: "nishizuka",	 img: "img/nishizuka.jpg", },
+	{ name: "steshka",     img: "img/steshka.jpg", },
+	{ name: "steshka",     img: "img/steshka.jpg", },
+	{ name: "simona",      img: "img/simona.jpg", },
+	{ name: "simona",      img: "img/simona.jpg", },
+	{ name: "pixabay",     img: "img/pixabay.jpg", },
+	{ name: "pixabay",     img: "img/pixabay.jpg", },
+	{ name: "pixabay-2",   img: "img/pixabay-2.jpg", },
+	{ name: "pixabay-2",   img: "img/pixabay-2.jpg", },
 	{ name: "pixabay-160", img: "img/pixabay-160.jpg", },
 	{ name: "pixabay-160", img: "img/pixabay-160.jpg", },
 ]
@@ -80,6 +168,7 @@ function arrangeCard() {
 	imagesArray.sort(() => 0.5 - Math.random());
 }
 
+
 //Flip Card Function
 
 function flipCard(e) {
@@ -129,14 +218,12 @@ function checkForMatch() {
 	const secondCardName = secondCardImage.name;
 
 	if (firstCardName == secondCardName) {
-		alert("You have found a match");
 		cardsWon += 1;
 		scoreBoard.innerHTML = cardsWon;
 		setTimeout(checkwon, 500)
 	} else {
 		firstCardElement.setAttribute("src", "https://res.cloudinary.com/fakod29/image/upload/v1604561420/blank_d3g5ij.png");
 		secondCardElement.setAttribute("src", "https://res.cloudinary.com/fakod29/image/upload/v1604561420/blank_d3g5ij.png");
-		alert("Wrong,please try again");
 		firstCardElement.classList.remove("flip");
 		secondCardElement.classList.remove("flip");
 	}

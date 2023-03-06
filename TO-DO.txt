@@ -1,6 +1,6 @@
 - Fix play again popover
-- Make cursor pointer when you hover over image
-- Make grid tabular
+- Make cursor pointer when you hover over image-#done
+- Make grid tabular-#done
 - (Bonus: Make grid size dynamic - Prompt the user at start of new game the number of rows/columns needed
 Size of grid should not be more than available images)
 - Refactor image randomization function - to prevent duplicate images

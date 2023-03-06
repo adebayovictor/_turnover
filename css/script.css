@@ -1,5 +1,6 @@
 .container{
-	padding-left: 100px;
+	padding-left: 200px;
+	padding-right: 200px;
 	padding-bottom: 10%;
 	background-color: whitesmoke;
   cursor: pointer;
@@ -11,6 +12,8 @@
 	display:table-cell;
 	flex-wrap:wrap;
 	margin:100px auto;
+	align-items: center;
+	justify-content: center;
 }
 
 .grid img{
@@ -25,16 +28,21 @@
 
 .popup{
 	background: red;
-	width:200px;
-	height:200px;
+	color:#fff;
 	z-index: 20;
-	position: fixed;
-	top: 100px;
-	left: 100px;
-	display:flex;
+	display:block;
+	text-decoration: none;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
+	flex-direction: column-reverse;
+	position:absolute;
+	max-width: 100%;
+	height: auto;
+	top: 50%;
+	left: 50%;
+	border:2px solid tomato;
+	transform: translate(-50%, -50%);
+	height: 40px;
 }
 
 .score{
@@ -53,4 +61,7 @@
 .data span{
 	color:rgb(206,121,11);
 	font-size:30px; 
+}
+#playAgain{
+	text-align: center;
 }
